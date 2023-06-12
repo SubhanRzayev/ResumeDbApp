@@ -73,7 +73,7 @@ public class UserDaoImpl extends AbstractDAO implements UserDaoInter {
                     + " c.name as birthplace "
                     + "from user u, "
                     + "left join country n on u.nationality_id = n.id"
-                    + "left join country c on u.birthplace_id=c.id where c.id=" + userId);
+                    + "left join country c on u.birthplace_id=c.id where u.id=" + userId);
             ResultSet rs = stmt.getResultSet();
 
             while (rs.next()) {
